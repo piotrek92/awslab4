@@ -1,8 +1,9 @@
 {	"expiration" : {"day":1},
 	"conditions": [ ["starts-with", "$key", "piotrwozniak/"],
     				 {"bucket": "lab4-weeia"}, 
-    				 {"acl": "private"},
-    				 {"success_action_redirect": "http://54.149.136.8:8080"},   
+    				 {"acl": "public-read"},
+				["starts-with", "$x-amz-meta-uploader",""],
+    				 {"success_action_redirect": "http://52.11.72.229:8080/bucketdane"},   
     				 ["content-length-range", 0, 1048576]
     				]   
 }
